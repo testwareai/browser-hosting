@@ -1,0 +1,23 @@
+{
+  "name": "browser-hosting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testwareai/browser-hosting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/testwareai/browser-hosting/issues"
+  },
+  "homepage": "https://github.com/testwareai/browser-hosting#readme",
+  "dependencies": {
+    "puppeteer": "^13.3.2"
+  }
+}
