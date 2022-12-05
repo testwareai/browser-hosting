@@ -1,7 +1,9 @@
 const { chromium } = require('@playwright/test');
 
 const run = ()=>{
-    console.log(chromium.launchServer().wsEndpoint());
+    const browser = chromium.launchServer();
+    const url = browser.wsEndpoint();
+    console.log(url)
 }
 
 
