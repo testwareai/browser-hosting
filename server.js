@@ -1,16 +1,11 @@
-const puppeteer = require("puppeteer");
+const { chromium } = require('@playwright/test');
 
-puppeteer
-  .launch({
-    headless: false,
-    defaultViewport: null,
-    args: [
-      "--remote-debugging-port=9225",
-      "--remote-debugging-address=0.0.0.0",
-      "--headless"
-    ],
-  })
-  .then(async (browser) => {
-    console.log(browser._connection.url())
-  })
-// => ws://0.0.0.0:9222/devtools/browser/490a2b32-ce62-4b6b-a530-d4931fdeb046
+const run = async()=>{
+    const browser =  await chromium.launchServer();
+    const url = await browser.wsEndpoint();
+    await console.log(url);
+}
+
+
+run();
+
