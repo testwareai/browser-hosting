@@ -1,11 +1,7 @@
-const { chromium } = require('@playwright/test');
+const { chromium } = require("@playwright/test");
 
-const run = async()=>{
-    const browser = await chromium.launchServer();
-    const url = await browser.wsEndpoint();
-    console.log(url)
-}
+(async () => {
+  const browser = await chromium.launchServer();
 
-
-run();
-
+  console.log(browser.wsEndpoint());
+})();
