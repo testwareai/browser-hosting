@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/testwareai/browser-hosting#readme",
   "dependencies": {
-    "@playwright/test": "^1.28.1"
+    "playwright": "^1.32.3"
   }
 }
