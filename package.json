@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/testwareai/browser-hosting#readme",
   "dependencies": {
-    "playwright": "^1.32.3"
+    "playwright": "^1.32.3",
+    "ws": "^8.13.0"
   }
 }
