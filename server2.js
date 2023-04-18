@@ -2,7 +2,7 @@ const { chromium } = require("playwright");
 const http = require("http");
 const WebSocket = require("ws");
 
-const PORT = 5000;
+const PORT = 3000;
 
 (async () => {
   const browser = await chromium.launch();
@@ -50,10 +50,14 @@ const PORT = 5000;
       const { type, ...payload } = JSON.parse(message);
       switch (type) {
         case "goto":
-          page.goto(payload.url);
+          page.goto(payload.url).catch((error) => {
+            console.error(`Error: ${error}`);
+          });
           break;
         case "click":
-          page.click(payload.selector);
+          page.click(payload.selector).catch((error) => {
+            console.error(`Error: ${error}`);
+          });
           break;
         default:
           console.error(`Unknown message type: ${type}`);
@@ -69,4 +73,6 @@ const PORT = 5000;
   server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
-})();
+})().catch((error) => {
+  console.error(`Error: ${error}`);
+});
